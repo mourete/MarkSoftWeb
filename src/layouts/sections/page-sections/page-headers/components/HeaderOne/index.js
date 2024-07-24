@@ -1,190 +1,135 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// @mui material components
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
-import Stack from "@mui/material/Stack";
-
-// Material Kit 2 React components
+import React from "react";
+import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import mascarilla from "assets/images/mascarilla_3_capas.jpg";
+import funda from "assets/images/fundaCama1.png";
+import guante from "assets/images/guante_1.png";
+import kn95 from "assets/images/mascarilla_kn95.png";
+import bata from "assets/images/bata.png";
+import gorro from "assets/images/gorro.png";
 
-// Images
-import bgImage from "assets/images/bg-coworking.jpeg";
-
+const products = [
+  {
+    title: "Macarilla 3 Capas",
+    image: mascarilla,
+    description: "Caja de 50 piezas",
+    buttonLabel: "Leer más",
+    buttonLink: "/Detalles/Mascarilla",
+  },
+  {
+    title: "Sábana Para Camilla Desechable Con Resorte",
+    image: funda,
+    description: "1 pieza",
+    color: "Color Azul",
+    buttonLabel: "Leer más",
+    buttonLink: "/Detalles/Sabana",
+  },
+  {
+    title: "Guantes Nitrile",
+    image: guante,
+    description: "1 pieza",
+    color: "Color Azul",
+    buttonLabel: "Leer más",
+    buttonLink: "/Detalles/Guantes",
+  },
+  {
+    title: "Bata Quirúrgica Desechable Reforzada SMS 38gr.",
+    image: bata,
+    description: "1 bolsa de 10 piezas",
+    color: "Color Azul",
+    buttonLabel: "Leer más",
+    buttonLink: "/Detalles/Bata",
+  },
+  {
+    title: "Gorro Azul Corrugado Cofias.",
+    image: gorro,
+    description: "1 Bolsa de 100 Piezas",
+    color: "Color Azul",
+    buttonLabel: "Leer más",
+    buttonLink: "/Detalles/Gorro",
+  },
+  {
+    title: "Cubrebocas KN95.",
+    image: kn95,
+    description: "50 Piezas",
+    color: "Color Blanco",
+    buttonLabel: "Leer más",
+    buttonLink: "/Detalles/Kn95",
+  },
+];
+/* prettier-ignore */
 function HeaderOne() {
   return (
-    <MKBox component="header" position="relative" height="100%">
-      <MKBox component="nav" position="absolute" top="0.5rem" width="100%">
-        <Container>
-          <Grid container flexDirection="row" alignItems="center">
-            <MKTypography
-              component={Link}
-              href="#"
-              variant="button"
-              color="white"
-              fontWeight="regular"
-              py={0.8125}
-              mr={2}
-            >
-              Material Design
-            </MKTypography>
-            <MKButton
-              variant="outlined"
-              color="white"
-              sx={{ display: { xs: "block", lg: "none" }, ml: "auto" }}
-            >
-              <MKBox component="i" color="white" className="fas fa-bars" />
-            </MKButton>
-            <MKBox
-              component="ul"
-              display={{ xs: "none", lg: "flex" }}
-              p={0}
-              my={0}
-              mx="auto"
-              sx={{ listStyle: "none" }}
-            >
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  color="white"
-                  fontWeight="regular"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Home
-                </MKTypography>
-              </MKBox>
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  color="white"
-                  fontWeight="regular"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  About Us
-                </MKTypography>
-              </MKBox>
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  color="white"
-                  fontWeight="regular"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Contact Us
-                </MKTypography>
-              </MKBox>
-            </MKBox>
-            <MKBox
-              component="ul"
-              display={{ xs: "none", lg: "flex" }}
-              p={0}
-              m={0}
-              sx={{ listStyle: "none" }}
-            >
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <MKBox component="i" color="white" className="fab fa-twitter" />
-                </MKTypography>
-              </MKBox>
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <MKBox component="i" color="white" className="fab fa-facebook" />
-                </MKTypography>
-              </MKBox>
-              <MKBox component="li">
-                <MKTypography
-                  component={Link}
-                  href="#"
-                  variant="button"
-                  p={1}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <MKBox component="i" color="white" className="fab fa-instagram" />
-                </MKTypography>
-              </MKBox>
-            </MKBox>
-          </Grid>
-        </Container>
-      </MKBox>
-      <MKBox
-        display="flex"
-        alignItems="center"
-        minHeight="100%"
-        sx={{
-          backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.5),
-              rgba(gradients.dark.state, 0.5)
-            )}, url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <Container>
-          <Grid container item xs={12} md={7} lg={6} flexDirection="column" justifyContent="center">
-            <MKTypography
-              variant="h1"
-              color="white"
-              mb={3}
-              sx={({ breakpoints, typography: { size } }) => ({
-                [breakpoints.down("md")]: {
-                  fontSize: size["3xl"],
-                },
-              })}
-            >
-              Material Kit
-            </MKTypography>
-            <MKTypography variant="body1" color="white" opacity={0.8} pr={6} mr={6}>
-              The time is now for it be okay to be great. People in this world shun people for being
-              nice.
-            </MKTypography>
-            <Stack direction="row" spacing={1} mt={3}>
-              <MKButton color="white">Get Started</MKButton>
-              <MKButton variant="text" color="white">
-                Read more
-              </MKButton>
-            </Stack>
-          </Grid>
-        </Container>
-      </MKBox>
+    <>
+    <MKBox pt={12} px={1}>
+      <Container>
+        <Grid container spacing={4}>
+          {products.map((product, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  alt={product.title}
+                  align="center"
+                  style={{ height: "290px", width: "350px" }}
+                  image={product.image}
+                />
+                <CardContent>
+                  <MKTypography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {product.category}
+                  </MKTypography>
+                  <MKTypography
+                    gutterBottom
+                    variant="h6"
+                    component="h2"
+                    color="black"
+                    style={{ fontSize: "20px" }}
+                  >
+                    {product.title}
+                  </MKTypography>
+                  <MKTypography
+                    variant="body2"
+                    color="text.secondary"
+                    style={{ fontSize: "0.85rem" }}
+                  >
+                    {product.description}
+                  </MKTypography>
+                  <MKTypography
+                    variant="body2"
+                    color="text.secondary"
+                    style={{ fontSize: "0.85rem" }}
+                  >
+                    {product.color}
+                  </MKTypography>
+                  <Link to={product.buttonLink}>
+                    <MKButton
+                      variant="contained"
+                      color="info"
+                      size="small"
+                      sx={{ mt: 2 }}
+                    >
+                      {product.buttonLabel}
+                    </MKButton>
+                  </Link>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </MKBox>
+  </>
   );
 }
 

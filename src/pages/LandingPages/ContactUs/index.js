@@ -1,18 +1,4 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
+// Contacto
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -23,124 +9,142 @@ import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
-
+import Container from "@mui/material/Container";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+//@mui icons
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import Box from "@mui/material/Box";
 // Routes
-import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Image
-import bgImage from "assets/images/illustrations/illustration-reset.jpg";
+import WhatsAppButton from "components/Whatsapp/Whatsapp";
+import Navbar from "components/Navbar/Navbar";
 
+/* prettier-ignore */
 function ContactUs() {
   return (
     <>
-      <MKBox position="fixed" top="0.5rem" width="100%">
-        <DefaultNavbar
-          routes={routes}
-          action={{
-            type: "external",
-            route: "https://www.creative-tim.com/product/material-kit-react",
-            label: "free download",
-            color: "info",
-          }}
-        />
-      </MKBox>
-      <Grid container spacing={3} alignItems="center">
-        <Grid item xs={12} lg={6}>
-          <MKBox
-            display={{ xs: "none", lg: "flex" }}
-            width="calc(100% - 2rem)"
-            height="calc(100vh - 2rem)"
-            borderRadius="lg"
-            ml={2}
-            mt={2}
-            sx={{ backgroundImage: `url(${bgImage})` }}
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={10}
-          md={7}
-          lg={6}
-          xl={4}
-          ml={{ xs: "auto", lg: 6 }}
-          mr={{ xs: "auto", lg: 6 }}
-        >
-          <MKBox
-            bgColor="white"
-            borderRadius="xl"
-            shadow="lg"
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            mt={{ xs: 20, sm: 18, md: 20 }}
-            mb={{ xs: 20, sm: 18, md: 20 }}
-            mx={3}
-          >
-            <MKBox
-              variant="gradient"
-              bgColor="info"
-              coloredShadow="info"
-              borderRadius="lg"
-              p={2}
-              mx={2}
-              mt={-3}
-            >
-              <MKTypography variant="h3" color="white">
-                Contact us
-              </MKTypography>
-            </MKBox>
-            <MKBox p={3}>
-              <MKTypography variant="body2" color="text" mb={3}>
-                For further questions, including partnership opportunities, please email
-                hello@creative-tim.com or contact using our contact form.
-              </MKTypography>
-              <MKBox width="100%" component="form" method="post" autoComplete="off">
-                <Grid container spacing={3}>
-                  <Grid item xs={12} md={6}>
-                    <MKInput
-                      variant="standard"
-                      label="Full Name"
-                      InputLabelProps={{ shrink: true }}
-                      fullWidth
-                    />
+    <Navbar />
+      <MKBox pt={12} px={1} mt={6}>
+      <Container>
+          <Card variant="outlined" sx={{ p: 3 }}>
+            <Grid container spacing={6}>
+              <Grid item xs={12} md={6}>
+                <MKBox display="flex" justifyContent="center" mb={3}>
+                  <MKTypography variant="h4" fontWeight="bold" gutterBottom color="black">
+                    Información
+                  </MKTypography>
+                </MKBox>
+                <Grid container spacing={3} mt={8}>
+                  <Grid item xs={12} sm={6}>
+                    <Card variant="outlined">
+                      <CardContent>
+                        <Box display="flex" justifyContent="center" mb={2}>
+                          <PhoneIcon style={{ color: "#003366", fontSize: '2rem' }} />
+                        </Box>
+                        <MKTypography variant="h6" component="div" align="center" color="black">
+                          LLÁMENOS
+                        </MKTypography>
+                        <MKTypography variant="body2" color="text.secondary" align="center" style={{ fontSize: '0.875rem' }}>
+                          (+52) 81 8210 9701
+                        </MKTypography>
+                      </CardContent>
+                    </Card>
                   </Grid>
-                  <Grid item xs={12} md={6}>
-                    <MKInput
-                      type="email"
-                      variant="standard"
-                      label="Email"
-                      InputLabelProps={{ shrink: true }}
-                      fullWidth
-                    />
+                  <Grid item xs={12} sm={6}>
+                    <Card variant="outlined">
+                      <CardContent>
+                        <Box display="flex" justifyContent="center" mb={2}>
+                          <EmailIcon style={{ color: "#003366", fontSize: '2rem' }} />
+                        </Box>
+                        <MKTypography variant="h6" component="div" align="center" color="black">
+                          ESCRÍBANOS
+                        </MKTypography>
+                        <MKTypography variant="body2" color="text.secondary" align="center" style={{ fontSize: '0.875rem' }}>
+                          contacto@marksoft.com.mx
+                        </MKTypography>
+                      </CardContent>
+                    </Card>
                   </Grid>
-                  <Grid item xs={12}>
-                    <MKInput
-                      variant="standard"
-                      label="What can we help you?"
-                      placeholder="Describe your problem in at least 250 characters"
-                      InputLabelProps={{ shrink: true }}
-                      multiline
-                      fullWidth
-                      rows={6}
-                    />
+                  <Grid item xs={12} sm={6}>
+                    <Card variant="outlined">
+                      <CardContent>
+                        <Box display="flex" justifyContent="center" mb={2}>
+                          <LocationOnIcon style={{ color: "#003366", fontSize: '2rem' }} />
+                        </Box>
+                        <MKTypography variant="h6" component="div" align="center" color="black">
+                          DIRECCIÓN
+                        </MKTypography>
+                        <MKTypography variant="body2" color="text.secondary" align="center" style={{ fontSize: '0.875rem' }}>
+                          Monterrey, Nuevo León.
+                        </MKTypography>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Card variant="outlined">
+                      <CardContent>
+                        <Box display="flex" justifyContent="center" mb={2}>
+                          <AccessTimeIcon style={{ color: "#003366", fontSize: '2rem' }} />
+                        </Box>
+                        <MKTypography variant="h6" component="div" align="center" color="black">
+                          HORARIOS
+                        </MKTypography>
+                        <MKTypography variant="body2" color="text.secondary" align="center" style={{ fontSize: '0.85rem' }}>
+                          Lunes a Viernes 9:00 am a 6:00 pm<br />Sábado de 9:00 am a 2:00 pm
+                        </MKTypography>
+                      </CardContent>
+                    </Card>
                   </Grid>
                 </Grid>
-                <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
-                  <MKButton type="submit" variant="gradient" color="info">
-                    Send Message
-                  </MKButton>
-                </Grid>
-              </MKBox>
-            </MKBox>
-          </MKBox>
-        </Grid>
-      </Grid>
-      <MKBox pt={6} px={1} mt={6}>
-        <DefaultFooter content={footerRoutes} />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <MKBox display="flex" justifyContent="center" mb={3}>
+                  <MKTypography variant="h4" fontWeight="bold" gutterBottom color="black">
+                    Dejar un mensaje
+                  </MKTypography>
+                </MKBox>
+                <MKTypography variant="body2" mb={4} align="center">
+                  Déjenos sus comentarios y con gusto nos pondremos en contacto.
+                </MKTypography>
+                <form>
+                  <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                      <MKInput label="Nombre" fullWidth />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <MKInput label="Correo Electrónico" fullWidth />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <MKInput label="Teléfono" fullWidth />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <MKInput label="Asunto" fullWidth />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <MKInput label="Mensaje" fullWidth multiline rows={4} />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <MKButton variant="contained" color="info" fullWidth>
+                        Enviar
+                      </MKButton>
+                    </Grid>
+                  </Grid>
+                </form>
+              </Grid>
+            </Grid>
+          </Card>
+        </Container>
+        <MKBox pt={6} px={1} mt={6}>
+          <DefaultFooter content={footerRoutes} />
+        </MKBox>
+        <WhatsAppButton />
       </MKBox>
     </>
   );

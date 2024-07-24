@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useEffect } from "react";
 
 // react-router components
@@ -28,6 +13,12 @@ import Presentation from "layouts/pages/presentation";
 
 // Material Kit 2 React routes
 import routes from "routes";
+import Mascarilla from "Detalles/Mascarilla";
+import Sabana from "Detalles/Sabana";
+import Guantes from "Detalles/Guantes";
+import Bata from "Detalles/Bata";
+import Gorro from "Detalles/Gorro";
+import Kn95 from "Detalles/Kn95";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -58,6 +49,12 @@ export default function App() {
         {getRoutes(routes)}
         <Route path="/presentation" element={<Presentation />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
+        <Route path="/Detalles/Mascarilla" element={<Mascarilla />} />
+        <Route path="/Detalles/Sabana" element={<Sabana />} />
+        <Route path="/Detalles/Guantes" element={<Guantes />} />
+        <Route path="/Detalles/Bata" element={<Bata />} />
+        <Route path="/Detalles/Gorro" element={<Gorro />} />
+        <Route path="/Detalles/Kn95" element={<Kn95 />} />
       </Routes>
     </ThemeProvider>
   );

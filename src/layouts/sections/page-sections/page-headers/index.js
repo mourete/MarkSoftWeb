@@ -1,41 +1,42 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
+//Productos
 // Sections components
-import BaseLayout from "layouts/sections/components/BaseLayout";
-import View from "layouts/sections/components/View";
+import MKBox from "components/MKBox";
+import MKTypography from "components/MKTypography";
 
 // PageHeaders page components
-import HeaderOne from "layouts/sections/page-sections/page-headers/components/HeaderOne";
-
-// PageHeaders page components code
-import headerOneCode from "layouts/sections/page-sections/page-headers/components/HeaderOne/code";
-
+import Navbar from "components/Navbar/Navbar";
+import WhatsAppButton from "components/Whatsapp/Whatsapp";
+import DefaultFooter from "examples/Footers/DefaultFooter";
+import footerRoutes from "footer.routes";
+import Productos from "layouts/sections/page-sections/page-headers/components/HeaderOne";
+/* prettier-ignore */
 function PageHeaders() {
   return (
-    <BaseLayout
-      title="Page Headers"
-      breadcrumb={[
-        { label: "Page Sections", route: "/sections/page-sections/page-headers" },
-        { label: "Page Headers" },
-      ]}
-    >
-      <View title="Header 1" code={headerOneCode} height="40rem">
-        <HeaderOne />
-      </View>
-    </BaseLayout>
+    <>
+    <Navbar />
+    <MKBox
+        width="100%"
+        height="100px"
+        bgcolor="primary.main"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        px={20}
+        mt={9}
+        sx={{
+          backgroundColor: "#003366",
+        }}
+      >
+        <MKTypography variant="h2" color="white">
+          Productos
+        </MKTypography>
+      </MKBox>
+      <Productos />
+      <MKBox pt={6} px={1} mt={6}>
+        <DefaultFooter content={footerRoutes} />
+      </MKBox>
+      <WhatsAppButton />
+    </>
   );
 }
 

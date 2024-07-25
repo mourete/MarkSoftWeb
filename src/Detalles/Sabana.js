@@ -12,7 +12,7 @@ import CardContent from "@mui/material/CardContent";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-
+import Modal from "@mui/material/Modal";
 // Routes
 import footerRoutes from "footer.routes";
 import DefaultFooter from "examples/Footers/DefaultFooter";
@@ -23,13 +23,28 @@ import WhatsAppButton from "components/Whatsapp/Whatsapp";
 import Navbar from "components/Navbar/Navbar";
 import { useState } from "react";
 
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "80%",
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  p: 4,
+};
+
 /* prettier-ignore */
 function PageSabana() {
   const [value, setValue] = useState(0);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <>
@@ -62,12 +77,23 @@ function PageSabana() {
                   height="500"
                   image={funda}
                   title="Sábana para Camilla Desechable con resorte."
+                  sx={{
+                    transition: "transform 0.3s",
+                    "&:hover": {
+                      transform: "scale(1.2)",
+                    },
+                  }}
                 />
                 <CardContent>
                   <MKBox display="flex" justifyContent="center">
-                    <MKButton variant="contained" color="info">
+                    <MKButton variant="contained" color="info" onClick={handleOpen}>
                       Ver imagen completa
                     </MKButton>
+                    <Modal open={open} onClose={handleClose} aria-labelledby="modal-title" aria-describedby="modal-description">
+                      <Box sx={style}>
+                        <img src={funda} alt="Sábana para Camilla Desechable con resorte" style={{ width: "100%" }} />
+                      </Box>
+                    </Modal>
                   </MKBox>
                 </CardContent>
               </Card>

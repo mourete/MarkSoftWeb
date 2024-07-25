@@ -33,20 +33,20 @@ function PageKn95() {
   return (
     <>
        <Navbar />
-      <MKBox
+       <MKBox
         width="100%"
-        height="100px"
+        height="70px"
         bgcolor="primary.main"
         display="flex"
         justifyContent="center"
         alignItems="center"
         px={20}
-        mt={9}
+        mt={12}
         sx={{
           backgroundColor: "#003366",
         }}
       >
-        <MKTypography variant="h2" color="white">
+        <MKTypography variant="h3" color="white">
             Cubrebocas KN95.
         </MKTypography>
       </MKBox>

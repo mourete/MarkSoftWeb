@@ -3,7 +3,7 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+import DefaultNavbar from "components/Navbar";
 import Productos from "layouts/sections/page-sections/page-headers/components/HeaderOne/Productos";
 // Routes
 import routes from "routes";
@@ -57,7 +57,7 @@ function PageHeaders() {
         }}
       >
         <MKTypography variant="h2" color="white">
-          Productos
+          Productos 
         </MKTypography>
       </MKBox>
       <Productos />

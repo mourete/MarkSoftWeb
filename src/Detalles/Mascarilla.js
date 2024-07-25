@@ -39,18 +39,18 @@ function PageMascarilla() {
       <Navbar />
       <MKBox
         width="100%"
-        height="100px"
+        height="70px"
         bgcolor="primary.main"
         display="flex"
         justifyContent="center"
         alignItems="center"
         px={20}
-        mt={9}
+        mt={12}
         sx={{
           backgroundColor: "#003366",
         }}
       >
-        <MKTypography variant="h2" color="white">
+        <MKTypography variant="h3" color="white">
           Mascarilla 3 Capas
         </MKTypography>
       </MKBox>
@@ -90,7 +90,7 @@ function PageMascarilla() {
               </MKTypography>
               <p>Elaborado en 3 capas: 2 de tela no tejida y la del medio en polipropileno fundido, puente nasal para ajuste,
                     cordones elásticos para las orejas, modelo de 3 pliegues que permiten el ajuste en la cara del usuario 
-                    con máxima comododidad.
+                    con máxima comodidad.
                   </p>
               {/* <form>
                 <Grid container spacing={3}>

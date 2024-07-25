@@ -2,10 +2,11 @@
 import React from "react";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import logo from "assets/images/logo_MarkSoft.png";
 import routes from "routes";
+import DefaultNavbar from "components/Navbar";
 
+/* prettier-ignore */
 const Navbar = () => {
   return (
     <>

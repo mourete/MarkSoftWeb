@@ -68,68 +68,62 @@ const products = [
 function HeaderOne() {
   return (
     <>
-    <MKBox pt={12} px={1}>
-      <Container>
-        <Grid container spacing={4}>
-          {products.map((product, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  alt={product.title}
-                  align="center"
-                  style={{ height: "290px", width: "350px" }}
-                  image={product.image}
-                />
-                <CardContent>
-                  <MKTypography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {product.category}
-                  </MKTypography>
-                  <MKTypography
-                    gutterBottom
-                    variant="h6"
-                    component="h2"
-                    color="black"
-                    style={{ fontSize: "20px" }}
-                  >
-                    {product.title}
-                  </MKTypography>
-                  <MKTypography
-                    variant="body2"
-                    color="text.secondary"
-                    style={{ fontSize: "0.85rem" }}
-                  >
-                    {product.description}
-                  </MKTypography>
-                  <MKTypography
-                    variant="body2"
-                    color="text.secondary"
-                    style={{ fontSize: "0.85rem" }}
-                  >
-                    {product.color}
-                  </MKTypography>
-                  <Link to={product.buttonLink}>
-                    <MKButton
-                      variant="contained"
-                      color="info"
-                      size="small"
-                      sx={{ mt: 2 }}
+      <MKBox pt={12} px={1}>
+        <Container>
+          <Grid container spacing={4}>
+            {products.map((product, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card align="left" sx={{ height: "100%" }}>
+                  <MKBox display="flex" justifyContent="center" alignItems="center" style={{ height: "290px", width: "100%" }}>
+                    <CardMedia
+                      component="img"
+                      alt={product.title}
+                      align="center"
+                      style={{ maxHeight: "100%", maxWidth: "100%" }}
+                      image={product.image}
+                    />
+                  </MKBox>
+                  <CardContent sx={{ height: "180px" }}> 
+                    <MKTypography
+                      gutterBottom
+                      variant="h1"
+                      color="black"
+                      style={{ fontSize: "18px" }}
                     >
-                      {product.buttonLabel}
-                    </MKButton>
-                  </Link>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </MKBox>
-  </>
+                      {product.title}
+                    </MKTypography>
+                    <MKTypography
+                      variant="body2"
+                      color="text.secondary"
+                      style={{ fontSize: "0.85rem" }}
+                    >
+                      {product.description}
+                    </MKTypography>
+                    <MKTypography
+                      variant="body2"
+                      color="text.secondary"
+                      style={{ fontSize: "0.85rem" }}
+                    >
+                      {product.color}
+                    </MKTypography>
+                    <Link to={product.buttonLink}>
+                      <MKButton
+                        variant="contained"
+                        color="info"
+                        size="small"
+                        sx={{ mt: 2 }}
+                      >
+                        {product.buttonLabel}
+                      </MKButton>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </MKBox>
+    </>
   );
 }
 

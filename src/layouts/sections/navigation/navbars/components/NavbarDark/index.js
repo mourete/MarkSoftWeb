@@ -2,7 +2,7 @@
 import MKBox from "components/MKBox";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+import DefaultNavbar from "components/Navbar";
 
 // Routes
 import routes from "routes";

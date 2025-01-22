@@ -7,7 +7,7 @@ import Author from "layouts/pages/landing-pages/author";
 import Presentation from "layouts/pages/presentation";
 
 // Sections
-import PageHeaders from "layouts/sections/page-sections/page-headers";
+//import PageHeaders from "layouts/sections/page-sections/page-headers";
 
 const routes = [
   {
@@ -25,8 +25,8 @@ const routes = [
   {
     name: "Productos",
     icon: <Icon>article</Icon>,
-    route: "/sections/page-sections/page-headers",
-    component: <PageHeaders />,
+    route: "https://marksoftmx.myshopify.com/collections/all",
+    isExternal: true,
   },
   {
     name: "Contacto",

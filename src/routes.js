@@ -7,7 +7,7 @@ import Author from "layouts/pages/landing-pages/author";
 import Presentation from "layouts/pages/presentation";
 
 // Sections
-import PageHeaders from "layouts/sections/page-sections/page-headers";
+//import PageHeaders from "layouts/sections/page-sections/page-headers";
 
 const routes = [
   {
@@ -23,10 +23,10 @@ const routes = [
     component: <Author />,
   },
   {
-    name: "Productos",
-    icon: <Icon>article</Icon>,
-    route: "/sections/page-sections/page-headers",
-    component: <PageHeaders />,
+    name: "Tienda",
+    icon: <Icon>store</Icon>,
+    route: "https://marksoftmx.wixsite.com/marksoftmx",
+    isExternal: true,
   },
   {
     name: "Contacto",
